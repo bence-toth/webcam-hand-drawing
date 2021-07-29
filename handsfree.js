@@ -1,21 +1,29 @@
 const handsfree = new Handsfree({ showDebug: false, hands: true });
 
+const convertLandmarkToCoordinates = (landmark) => {
+  const { x, y } = landmark ?? {};
+  return {
+    x: (1 - x) * width,
+    y: y * height,
+  };
+};
+
+const calculateHue = (timestamp, hueShiftSpeed) => Math.floor((timestamp * hueShiftSpeed) / 1000) % 360,
+
 const handsfreeControls = {
   start: () => {
     handsfree.use("recordLine", (data) => {
       if (data?.hands?.multiHandedness?.length > 1) {
         const now = Date.now();
+        const hands = [
+          data?.hands?.landmarks[0][21],
+          data?.hands?.landmarks[1][21],
+        ];
         const line = {
-          from: {
-            x: (1 - data?.hands?.landmarks[0][21]?.x) * width,
-            y: data?.hands?.landmarks[0][21]?.y * height,
-          },
-          to: {
-            x: (1 - data?.hands?.landmarks[1][21]?.x) * width,
-            y: data?.hands?.landmarks[1][21]?.y * height,
-          },
+          from: convertLandmarkToCoordinates(hands[0]),
+          to: convertLandmarkToCoordinates(hands[1]),
           timestamp: now,
-          hue: Math.floor(now / 50) % 360,
+          hue: calculateHue(now,  hueShiftSpeed),
         };
         lines.push(line);
       }

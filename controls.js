@@ -1,5 +1,5 @@
-// Controls
 let isHandsfreePaused = false;
+
 const pauseButton = document.getElementById("pauseButton");
 
 const togglePausedState = () => {
@@ -24,6 +24,7 @@ const initControls = () => {
 const maxLineAge = 3000;
 const minThickness = 1;
 const maxThickness = 5;
+const hueShiftSpeed = 20;
 
 initControls();
 
@@ -32,3 +33,4 @@ initControls();
 // - maxLineAge
 // - minThickness
 // - maxThickness
+// - hueShiftSpeed
