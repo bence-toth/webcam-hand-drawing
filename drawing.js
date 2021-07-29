@@ -28,7 +28,9 @@ const draw = () => {
       // Set alpha
       const age = now - line.timestamp;
       const alpha = (maxLineAge - age) / maxLineAge;
-      context.strokeStyle = `hsla(${line.hue}, 100%, 50%, ${alpha.toFixed(4)})`;
+      context.strokeStyle = `hsla(${line.hue}, 100%, 50%, ${(
+        alpha * line.alpha
+      ).toFixed(4)})`;
 
       // Set thickness
       const length = getDiagonalLength(
