@@ -1,6 +1,6 @@
 # Webcam hand drawing experiment
 
-An experiment made with Handsfree.
+[An experiment](https://bence-toth.github.io/webcam-hand-drawing/) made with Handsfree.
 
 Give permission for the browser to use your webcam and see the magic happen.
 
