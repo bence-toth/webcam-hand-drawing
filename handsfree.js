@@ -29,19 +29,47 @@ const handsfreeControls = {
         };
         const line2 = {
           from: convertLandmarkToCoordinates(hands[0]),
-          to: dot,
+          to: dots[0],
           timestamp: now,
           hue: calculateHue(now, hueShiftSpeed),
-          alpha: 0.1,
+          alpha: 0.035,
         };
         const line3 = {
-          from: dot,
+          from: dots[0],
           to: convertLandmarkToCoordinates(hands[1]),
           timestamp: now,
           hue: calculateHue(now, hueShiftSpeed),
-          alpha: 0.1,
+          alpha: 0.035,
         };
-        lines.push(line1, line2, line3);
+        const line4 = {
+          from: convertLandmarkToCoordinates(hands[0]),
+          to: dots[1],
+          timestamp: now,
+          hue: calculateHue(now, hueShiftSpeed),
+          alpha: 0.035,
+        };
+        const line5 = {
+          from: dots[1],
+          to: convertLandmarkToCoordinates(hands[1]),
+          timestamp: now,
+          hue: calculateHue(now, hueShiftSpeed),
+          alpha: 0.035,
+        };
+        const line6 = {
+          from: convertLandmarkToCoordinates(hands[0]),
+          to: dots[2],
+          timestamp: now,
+          hue: calculateHue(now, hueShiftSpeed),
+          alpha: 0.035,
+        };
+        const line7 = {
+          from: dots[2],
+          to: convertLandmarkToCoordinates(hands[1]),
+          timestamp: now,
+          hue: calculateHue(now, hueShiftSpeed),
+          alpha: 0.035,
+        };
+        lines.push(line1, line2, line3, line4, line5, line6, line7);
       }
     });
     handsfree.start();

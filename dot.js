@@ -8,7 +8,7 @@ const createRandomDot = () => {
   };
 };
 
-let dot = createRandomDot();
+let dots = [createRandomDot(), createRandomDot(), createRandomDot()];
 
 const handleOverflow = ({ position, bottomBoundary, topBoundary }) => {
   if (position < bottomBoundary) {
@@ -42,8 +42,10 @@ const moveDot = ({ x, y, d, s }) => {
 };
 
 setInterval(() => {
-  dot = moveDot(dot);
+  dots[0] = moveDot(dots[0]);
+  dots[1] = moveDot(dots[1]);
+  dots[2] = moveDot(dots[2]);
 }, 1000 / maxFrameRate);
 
 // Exposes:
-// - dot
+// - dots
