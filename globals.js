@@ -1,6 +1,8 @@
-const width = window.innerWidth;
-const height = window.innerHeight;
+const viewportWidth = window.innerWidth;
+const viewportHeight = window.innerHeight;
+const maxFrameRate = 60;
 
 // exposes:
-// - width
-// - height
+// - viewportWidth
+// - viewportHeight
+// - maxFrameRate

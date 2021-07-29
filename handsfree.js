@@ -3,8 +3,8 @@ const handsfree = new Handsfree({ showDebug: false, hands: true });
 const convertLandmarkToCoordinates = (landmark) => {
   const { x, y } = landmark ?? {};
   return {
-    x: (1 - x) * width,
-    y: y * height,
+    x: (1 - x) * viewportWidth,
+    y: y * viewportHeight,
   };
 };
 
