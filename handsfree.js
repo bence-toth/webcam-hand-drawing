@@ -31,8 +31,8 @@ const handsfreeControls = {
     });
     handsfree.start();
   },
-  pause: handsfree.pause,
-  unpause: handsfree.unpause,
+  pause: () => handsfree.pause(),
+  unpause: () => handsfree.unpause(),
 };
 
 // exposes:
