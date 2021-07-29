@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 html,
@@ -12,6 +15,7 @@ body {
 
 body {
   background-color: black;
+  color: hsl(0, 0%, 90%);
 }
 
 #canvas {
@@ -24,6 +28,47 @@ body {
   right: 0;
 }
 
-#controls {
+header {
+  padding: 0 20px;
   position: absolute;
+  width: 100%;
+  height: 48px;
+  background: hsla(0, 0%, 10%, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+button {
+  background-color: hsl(0, 0%, 90%);
+  color: hsl(0, 0%, 10%);
+  padding: 5px;
+  border: 0;
+  border-radius: 5px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  padding: 5px;
+  background: hsla(19, 0%, 10%, 0.8);
+}
+
+footer a {
+  color: rgb(129, 169, 255);
+}
+
+.spacer {
+  display: inline-block;
+  width: 20px;
 }
