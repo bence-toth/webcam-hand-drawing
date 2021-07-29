@@ -8,7 +8,8 @@ const convertLandmarkToCoordinates = (landmark) => {
   };
 };
 
-const calculateHue = (timestamp, hueShiftSpeed) => Math.floor((timestamp * hueShiftSpeed) / 1000) % 360,
+const calculateHue = (timestamp, hueShiftSpeed) =>
+  Math.floor((timestamp * hueShiftSpeed) / 1000) % 360;
 
 const handsfreeControls = {
   start: () => {
@@ -23,7 +24,7 @@ const handsfreeControls = {
           from: convertLandmarkToCoordinates(hands[0]),
           to: convertLandmarkToCoordinates(hands[1]),
           timestamp: now,
-          hue: calculateHue(now,  hueShiftSpeed),
+          hue: calculateHue(now, hueShiftSpeed),
         };
         lines.push(line);
       }
